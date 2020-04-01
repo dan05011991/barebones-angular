@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head lang="en">
+  <title>Demo Application | DJF</title>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="Demo application to demonstrate tool chain" />
+  <meta name="Keywords" content="Demo application" />
+  <link rel="author" href="https://uk.linkedin.com/in/daniel-foley-562a2068" />
+
+  <!-- rev-hash -->
+  <link rel="stylesheet" href="/css/vendor.css">
+  <link rel="stylesheet" href="/css/site.css">
+  <!-- end -->
+
+  <body data-ng-app="app">
+
+    <div id="header">
+      <div class="row">
+        <div class="col-md-6 col-sm-12 col-xs-12">
+          <img src="/images/logo.jpeg" class="logo left" />
+        </div>
+        <div class="col-md-6 col-sm-12 col-xs-12">
+          <div class="social">
+            <a href="https://www.facebook.com/" target="_blank" class="social-facebook"></a>
+            <a ui-sref="contact" class="social-mail"></a>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="header-nav">
+
+        <nav class="navbar navbar-default" role="navigation">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Menu</a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
+
+            <ul class="nav navbar-nav">
+              <li ui-sref-active="active" ng-click="navCollapsed = !navCollapsed"><a ui-sref="home">Home</a></li>
+              <li ui-sref-active="active" ng-click="navCollapsed = !navCollapsed"><a ui-sref="person">Person</a></li>
+              <li ui-sref-active="active" ng-click="navCollapsed = !navCollapsed"><a ui-sref="car">Car</a></li>
+              <li ui-sref-active="active" ng-click="navCollapsed = !navCollapsed"><a ui-sref="airport">Airport</a></li>
+              <li ui-sref-active="active" ng-click="navCollapsed = !navCollapsed"><a ui-sref="about">About</a></li>
+
+            </ul>
+
+          </div>
+          <!-- /.navbar-collapse -->
+        </nav>
+
+      </div>
+
+    </div>
+    <!-- Header end -->
+
+    <div class="container">
+      <div data-ui-view>
+        <span class="wait-placeholder">Please wait while your content is loading...</span>
+      </div>
+    </div>
+
+    <div id="footer">
+      <div class="row">
+        <div class="col-md-4">
+
+          <div class="row">
+            <div class="col-md-12 footer-title">
+                <h4>About Us</h4>
+            </div>
+
+            <div class="col-md-12 footer-content">
+              <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+              </p>
+            </div>
+          </div>
+
+          <div class="row">
+
+            <div class="col-md-12 footer-title adjoining-footer-section">
+              <h4>Useful Links</h4>
+            </div>
+
+            <div class="col-md-12 footer-content">
+              <footer-links></footer-links>
+            </div>
+
+            <div class="col-md-12 see-more small-see-more">
+              <a ui-sref="links">See all links</a>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+          <div class="row">
+
+            <div class="col-md-12 footer-title">
+              <h4>Social</h4>
+            </div>
+
+            <div class="col-md-12 footer-content social">
+                <a href="https://www.facebook.com/" target="_blank" title="Facebook" class="footer-facebook">Facebook</a>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+          <div class="row">
+
+            <div class="col-md-12 footer-title">
+              <h4>Sponsors</h4>
+            </div>
+
+            <div class="col-md-12 footer-content">
+              <a href="http://google.co.uk/" title="#" target="_blank"><img src="/images/googlelogo.jpg" class="sponsor" alt="#"></a>
+              <a href="https://facebook.co.uk/" title="#" target="_blank"><img src="/images/facebooklogo.png" class="sponsor" alt="#"></a>
+              <a href="http://twitter.co.uk/" title="#" target="_blank"><img src="/images/twitterlogo.png" class="sponsor" alt="#"></a>
+            </div>
+
+            <div class="col-md-12 see-more small-see-more">
+              <a ui-sref="sponsors">See all sponsors</a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+        <!-- Footer / Bottom -->
+    </div>
+    <div class="signature">
+      <dp-config></dp-config>
+
+      <p>
+        Demo Website &copy; Copyright 2020. All Rights Reserved.
+      </p>
+    </div>
+    <!-- rev-hash -->
+    <script src="/js/vendor.js"></script>
+    <script src="/js/site.js"></script>
+    <!-- end -->
+
+  </body>
+
+</html>

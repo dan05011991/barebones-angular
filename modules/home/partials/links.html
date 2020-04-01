@@ -1,0 +1,22 @@
+<!-- Page Heading -->
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="page-header">Useful Links</h1>
+    <p>
+
+    </p>
+
+  </div>
+
+  <div class="col-md-4 useful-links border-left"
+          ng-repeat="section in usefulLinksCtrl.links"
+          ng-class="$index >= 3 ?  'section-margin-padding' : '' ">
+    <h3>{{section.name}}</h3>
+    <ul>
+      <li ng-repeat="link in section.links">
+        <a ng-href="{{link.href}}" target="_blank">{{link.name}}</a>
+        <span ng-show="link.description.length > 0" class="useful-link-description"> - {{link.description}}</span>
+      </li>
+    </ul>
+  </div>
+</div>
