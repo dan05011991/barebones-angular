@@ -1,30 +1,36 @@
 {
-  "name": "demo-application",
+  "name": "barebones-angular",
   "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --content-base --inline --hot --port 1234"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dan05011991/barebones-angular.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dan05011991/barebones-angular/issues"
+  },
+  "homepage": "https://github.com/dan05011991/barebones-angular#readme",
   "dependencies": {
-    "jquery": "~2.1.4",
-    "angular": "~1.4.7",
-    "angular-ui-router": "~0.2.17",
-    "angular-moment": "~0.10.3",
-    "restangular": "~1.5.1",
-    "lodash": "3.10.1",
-    "ng-file-upload-shim": "~12.0.1",
-    "ng-file-upload": "~12.0.1",
-    "angular-recaptcha": "~2.5.0",
-    "angular-animate": "~1.5.3",
-    "moment": "~2.12.0",
-    "angular-easyfb": "~1.4.4",
-    "angular-update-meta": "~1.9.0",
-    "angulartics-google-analytics": "~0.1.4",
-    "angular-bootstrap": "^2.5.0",
-    "bootstrap": "^3.3.1"
+    "angular": "^1.7.9",
+    "angular-ui-bootstrap": "^2.5.6",
+    "bower": "^1.8.8",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "glob": "^7.1.6",
+    "raw-loader": "^4.0.0"
   },
   "devDependencies": {
-    "angular-mocks": "~1.4.6"
-  },
-  "resolutions": {
-    "angular": ">=1.2.0 <1.5.0",
-    "moment": ">=2.8.0 <2.11.0"
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.22.0",
+    "babel-preset-stage-0": "^6.22.0",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2"
   }
 }
-

@@ -1,6 +1,6 @@
 var dpConfig = function() {
   return {
-    template: require('../partials/config.html'),
+    template: 'Snapshot Version: {{backendController.version}}',
     controller: 'BackendController',
     controllerAs: 'backendController'
   };

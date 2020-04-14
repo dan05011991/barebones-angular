@@ -1,0 +1,2 @@
+var carMod = angular.module('app.car', ['ui.router', 'agGrid']);
+carMod.controller('CarArticleController', require('./controllers/CarArticleController'));carMod.controller('CarController', require('./controllers/CarController'));carMod.factory('CarService', require('./services/CarService'));carMod.config(require('./routes/carRoutes'));
