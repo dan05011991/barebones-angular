@@ -57,7 +57,7 @@
               <li ui-sref-active="active" ng-click="navCollapsed = !navCollapsed"><a ui-sref="home">Home</a></li>
               <li ui-sref-active="active" ng-click="navCollapsed = !navCollapsed"><a ui-sref="car">Car</a></li>
               <li ui-sref-active="active" ng-click="navCollapsed = !navCollapsed"><a ui-sref="about">About</a></li>
-
+              <li ui-sref-active="active" ng-click="navCollapsed = !navCollapsed"><my-spincomponent></my-spinner></li>
             </ul>
 
           </div>
@@ -73,6 +73,11 @@
       <div data-ui-view>
         <span class="wait-placeholder">Please wait while your content is loading...</span>
       </div>
+    </div>
+
+    <!-- <div ng-controller="defaultCtrl"> -->
+    <div>
+      <unordered-list list-source="products" list-property="price | currency" />
     </div>
 
     <div id="footer">

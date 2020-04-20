@@ -7,8 +7,12 @@ require('./modules/comms');
 require('./modules/calendar');
 require('./modules/backend');
 require('./modules/app-config');
+require('./modules/spinner');
+require('./modules/unorderedlist');
 
 var app = angular.module('app', [
+  'app.unorderedlist',
+  'app.myspinner',
   'app.config',
   'app.comms',
   'app.car',
