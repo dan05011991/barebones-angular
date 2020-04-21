@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/dan05011991/barebones-angular#readme",
   "dependencies": {
+    "@material-ui/core": "^4.9.11",
     "angular": "^1.7.9",
     "angular-ui-bootstrap": "^2.5.6",
     "autoprefixer": "^9.7.6",

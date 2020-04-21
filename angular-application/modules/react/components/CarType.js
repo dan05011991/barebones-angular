@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
-import DropdownToggle from 'react-bootstrap/DropdownToggle';
-import DropdownMenu from 'react-bootstrap/DropdownMenu';
-import DropdownItem from 'react-bootstrap/DropdownItem';
-import Spinner from 'react-bootstrap/Spinner';
-import Button from 'react-bootstrap/Button';
+import { makeStyles } from '@material-ui/core/styles';
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
+
 
 class CarType extends Component {
 
@@ -13,41 +10,26 @@ class CarType extends Component {
         super(props);
 
         this.state = {
-            models: ['A4', 'A6', 'Q7', 'R8']
+            models: ['A4', 'A6', 'Q7', 'R8'],
+            selected: 'A4'
         };
     }
 
-    selectModel = (e) => {
-        console.log("model selected");
-    }
+    selectModel = event => {
+        // this.setState({ selected: event.target.value, name: event.target.name});
+        console.log('You chose ' + event.target.value);
+    };
 
     render() {
-
-        const clickFunc = this.selectModel;
-        const modelItems = this.state.models.map((model, index) =>
-            <DropdownItem href='#' key={index} onClick={() => console.log('hello')}>
-                {model}
-            </DropdownItem>
+        const modelItems = this.state.models.map((model, index) => 
+            <MenuItem label="Model" value={model} key={index} name={model}>{model}</MenuItem>
         );
 
         return (
             <div>
-                <Dropdown>
-                    <DropdownToggle caret="true">
-                        Model
-                    </DropdownToggle>
-                
-                    <DropdownMenu>
-                        {modelItems}
-                    </DropdownMenu>
-                    {/* <DropdownButton id='model-dropdown' title='Model'>
-                        <Dropdown.Item tag="a" href='#' key='1' onClick={() => console.log('model selected')}>
-                            <div>    
-                                hello
-                            </div>
-                        </Dropdown.Item>
-                    </DropdownButton> */}
-                </Dropdown>
+                <Select value={this.state.selected} onChange={this.selectModel}>
+                    {modelItems}
+                </Select>
             </div>
         );
     }
