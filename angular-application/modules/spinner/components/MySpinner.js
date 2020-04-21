@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Spinner from 'react-bootstrap/Spinner';
 import Button from 'react-bootstrap/Button';
-import 'bootstrap/dist/css/bootstrap.css';
+// import 'bootstrap/dist/css/bootstrap.css';
 
 class MySpinner extends Component {
   render() {

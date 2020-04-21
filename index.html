@@ -15,6 +15,7 @@
   <!-- rev-hash -->
   <link rel="stylesheet" href="./css/vendor.css">
   <link rel="stylesheet" href="./css/site.css">
+  <!-- <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css"> -->
 
   <!-- end -->
 
@@ -57,7 +58,7 @@
               <li ui-sref-active="active" ng-click="navCollapsed = !navCollapsed"><a ui-sref="home">Home</a></li>
               <li ui-sref-active="active" ng-click="navCollapsed = !navCollapsed"><a ui-sref="car">Car</a></li>
               <li ui-sref-active="active" ng-click="navCollapsed = !navCollapsed"><a ui-sref="about">About</a></li>
-              <li ui-sref-active="active" ng-click="navCollapsed = !navCollapsed"><my-spincomponent></my-spinner></li>
+              <li ui-sref-active="active" ng-click="navCollapsed = !navCollapsed"><a ui-sref="purchase">Purchase</a></li>
             </ul>
 
           </div>
@@ -79,6 +80,8 @@
     <div>
       <unordered-list list-source="products" list-property="price | currency" />
     </div>
+
+    <!-- <my-spincomponent></my-spincomponent> -->
 
     <div id="footer">
       <div class="row">
