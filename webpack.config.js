@@ -26,7 +26,6 @@ module.exports = {
           options: {
             relativeTo: path.resolve(__dirname, "app")
           }
-
       },
       {
         test: /\.css$/,
