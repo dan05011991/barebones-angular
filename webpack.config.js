@@ -9,8 +9,15 @@ module.exports = {
   devtool: debug ? "inline-sourcemap" : null,
   entry: {
     bundle: glob.sync("./angular-application/**/*.js")
-},
+  },
   module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: ['babel-loader']
+      }
+    ],
     loaders: [
       {
         test: /\.jsx?$/,
