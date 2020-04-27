@@ -13,7 +13,7 @@ var homeRoutes = function($stateProvider,  $urlRouterProvider) {
   })
   .state('purchase', {
     url: '/purchase',
-    template: '<div class="col-lg-12">    <h1 class="page-header">Car Specification</h1></div><car-type></car-type>'
+    template: '<div class="col-lg-12">    <h1 class="page-header">Car Specification</h1></div><car-purchase></car-type>'
   })
   .state('sponsors', {
     url: '/sponsors',
