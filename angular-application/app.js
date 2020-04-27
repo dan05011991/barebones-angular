@@ -9,7 +9,7 @@ require('./modules/backend');
 require('./modules/app-config');
 require('./modules/spinner');
 require('./modules/unorderedlist');
-// require('./modules/react');
+require('./modules/react');
 
 var app = angular.module('app', [
   'app.react',
