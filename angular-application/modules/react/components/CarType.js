@@ -3,18 +3,11 @@ import { makeStyles } from '@material-ui/core/styles';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import InputLabel from '@material-ui/core/InputLabel';
+import { connect } from 'react-redux';
 
 
 class CarType extends Component {
 
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            models: ['A4', 'A6', 'Q7', 'R8'],
-            selected: 'A4'
-        };
-    }
 
     selectModel = event => {
         // this.setState({ selected: event.target.value, name: event.target.name});
@@ -26,15 +19,16 @@ class CarType extends Component {
         })
     };
 
+
     render() {
-        const modelItems = this.state.models.map((model, index) => 
+        const modelItems = this.props.carModels.map((model, index) => 
             <MenuItem label="Model" value={model} key={index} name={model}>{model}</MenuItem>
         );
 
         return (
             <div>
                 <InputLabel htmlFor="model-select">Model</InputLabel>
-                <Select value={this.state.selected} onChange={this.selectModel} 
+                <Select value={this.props.selected} onChange={this.selectModel} 
                     inputProps = {{ name: 'selected', id: 'model-select'}}
                 >
                     {modelItems}
@@ -44,4 +38,12 @@ class CarType extends Component {
     }
 }
 
-export default CarType;
+
+const mapStateToProps = state => {
+    return { 
+        carModels: state.carPurchase.carModels, 
+        selected: state.carPurchase.selected 
+    };
+};
+
+export default connect(mapStateToProps)(CarType);
