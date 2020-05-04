@@ -11,7 +11,13 @@ const carPurchaseState = {
 };
 
 function carPurchaseReducer(state = carPurchaseState, action) {
-  // DO STUFF
+  switch (action.type) {
+    case 'MODEL_CHANGED':
+      return {
+        ...state,
+        selected: action.selectedModel
+      }
+    }
   return state;
 }
 

@@ -28,7 +28,7 @@ class CarType extends Component {
         return (
             <div>
                 <InputLabel htmlFor="model-select">Model</InputLabel>
-                <Select value={this.props.selected} onChange={this.selectModel} 
+                <Select value={this.props.selected} onChange={this.props.onModelChanged} 
                     inputProps = {{ name: 'selected', id: 'model-select'}}
                 >
                     {modelItems}
@@ -39,6 +39,12 @@ class CarType extends Component {
 }
 
 
+const mapDispatchToProps = dispatch => {
+    return {
+        onModelChanged: (event) => dispatch({type: 'MODEL_CHANGED', selectedModel: event.target.value})
+    }
+}
+
 const mapStateToProps = state => {
     return { 
         carModels: state.carPurchase.carModels, 
@@ -46,4 +52,4 @@ const mapStateToProps = state => {
     };
 };
 
-export default connect(mapStateToProps)(CarType);
+export default connect(mapStateToProps, mapDispatchToProps)(CarType);

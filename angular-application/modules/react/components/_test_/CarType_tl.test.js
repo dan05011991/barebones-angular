@@ -1,9 +1,9 @@
 import React from 'react';
 import CarPurchase from '../CarPurchase';
-import { render, fireEvent, waitFor, screen } from '@testing-library/react'
+import { render, fireEvent, waitFor, screen } from '@testing-library/react';
 // import '@testing-library/jest-dom/extend-expect'
 
-test('renders without crashing', () => {
+it('renders without crashing', () => {
     // const div = document.createElement('div');
     // ReactDOM.render('<carType/>', div);
     render(<CarPurchase/>)
