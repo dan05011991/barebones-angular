@@ -9,17 +9,6 @@ import { connect } from 'react-redux';
 class CarType extends Component {
 
 
-    selectModel = event => {
-        // this.setState({ selected: event.target.value, name: event.target.name});
-        console.log('You chose ' + event.target.value);
-        const name = event.target.name;
-        this.setState({
-            ...this.state,
-            [name]: event.target.value,
-        })
-    };
-
-
     render() {
         const modelItems = this.props.carModels.map((model, index) => 
             <MenuItem label="Model" value={model} key={index} name={model}>{model}</MenuItem>
@@ -48,7 +37,7 @@ const mapDispatchToProps = dispatch => {
 const mapStateToProps = state => {
     return { 
         carModels: state.carPurchase.carModels, 
-        selected: state.carPurchase.selected 
+        selected: state.carPurchase.selectedModel
     };
 };
 

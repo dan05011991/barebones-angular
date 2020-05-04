@@ -5,6 +5,10 @@ import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import { connect } from 'react-redux';
 
 
 
@@ -20,6 +24,11 @@ class CarOptions extends Component {
 
 
   render() {
+
+    const optionItems = this.props.options.map((option, index) => 
+      <ListItem button><ListItemText primary={option}></ListItemText></ListItem>
+    );
+
     return (
       <div >
         <ExpansionPanel>
@@ -30,9 +39,9 @@ class CarOptions extends Component {
             <Typography >Options</Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
-            <Typography>
-              Car options
-            </Typography>
+          <List component="nav" aria-label="Car Options">
+              {optionItems}
+          </List>
           </ExpansionPanelDetails>
         </ExpansionPanel>
       </div>
@@ -40,4 +49,10 @@ class CarOptions extends Component {
   }
 }
 
-export default CarOptions;
+const mapStateToProps = state => {
+  return { 
+      options: state.carPurchase.selectedOptions
+  };
+};
+
+export default connect(mapStateToProps)(CarOptions);

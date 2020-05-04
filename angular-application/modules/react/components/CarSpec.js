@@ -1,20 +1,3 @@
-// import React, { Component } from 'react'
-// import Spinner from 'react-bootstrap/Spinner';
-// import Button from 'react-bootstrap/Button';
-
-// class CarSpec extends Component {
-//   render() {
-//     return (
-//       <div>
-        
-//       </div>
-//     );
-//   }
-// }
-
-// export default CarSpec;
-
-
 import React, { Component } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
@@ -22,6 +5,10 @@ import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import { connect } from 'react-redux';
 
 
 
@@ -37,6 +24,11 @@ class CarSpec extends Component {
 
 
   render() {
+
+    const specItems = this.props.specs.map((spec, index) => 
+      <ListItem button><ListItemText primary={spec}></ListItemText></ListItem>
+    );
+
     return (
       <div >
         <ExpansionPanel>
@@ -47,9 +39,9 @@ class CarSpec extends Component {
             <Typography >Specification</Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
-            <Typography>
-              Car spec details
-            </Typography>
+            <List component="nav" aria-label="Car Specification">
+              {specItems}
+            </List>
           </ExpansionPanelDetails>
         </ExpansionPanel>
       </div>
@@ -57,4 +49,11 @@ class CarSpec extends Component {
   }
 }
 
-export default CarSpec;
+
+const mapStateToProps = state => {
+  return { 
+      specs: state.carPurchase.selectedSpec
+  };
+};
+
+export default connect(mapStateToProps)(CarSpec);
