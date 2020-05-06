@@ -13,20 +13,11 @@ import { connect } from 'react-redux';
 
 
 class CarOptions extends Component {
-  
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      A4 : []
-    }
-  }
-
 
   render() {
 
     const optionItems = this.props.options.map((option, index) => 
-      <ListItem button><ListItemText primary={option}></ListItemText></ListItem>
+      <ListItem key={index} button><ListItemText primary={option}></ListItemText></ListItem>
     );
 
     return (

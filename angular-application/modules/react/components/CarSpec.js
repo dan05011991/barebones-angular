@@ -26,7 +26,7 @@ class CarSpec extends Component {
   render() {
 
     const specItems = this.props.specs.map((spec, index) => 
-      <ListItem button><ListItemText primary={spec}></ListItemText></ListItem>
+      <ListItem key={index} button><ListItemText primary={spec}></ListItemText></ListItem>
     );
 
     return (

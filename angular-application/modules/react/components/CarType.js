@@ -8,7 +8,6 @@ import { connect } from 'react-redux';
 
 class CarType extends Component {
 
-
     render() {
         const modelItems = this.props.carModels.map((model, index) => 
             <MenuItem label="Model" value={model} key={index} name={model}>{model}</MenuItem>
