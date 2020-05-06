@@ -1,3 +1,25 @@
+- [<span id="anchor"></span>Migrating from AngularJS to React](#-span-id--anchor----span-migrating-from-angularjs-to-react)
+  * [<span id="anchor-1"></span>Benefits of migrating to React](#-span-id--anchor-1----span-benefits-of-migrating-to-react)
+  * [<span id="anchor-2"></span>Terminology](#-span-id--anchor-2----span-terminology)
+  * [<span id="anchor-3"></span>Adding a new React component to an AngularJS application](#-span-id--anchor-3----span-adding-a-new-react-component-to-an-angularjs-application)
+    + [<span id="anchor-4"></span>1. Add dependencies to the project](#-span-id--anchor-4----span-1-add-dependencies-to-the-project)
+    + [<span id="anchor-5"></span>2. Define the React component](#-span-id--anchor-5----span-2-define-the-react-component)
+    + [<span id="anchor-6"></span>3. Define an Angular module for the React component](#-span-id--anchor-6----span-3-define-an-angular-module-for-the-react-component)
+    + [<span id="anchor-7"></span>4. Create the top level Angular app module](#-span-id--anchor-7----span-4-create-the-top-level-angular-app-module)
+    + [<span id="anchor-8"></span>5. Using the new component](#-span-id--anchor-8----span-5-using-the-new-component)
+  * [<span id="anchor-9"></span>Replacing an existing AngularJS directive](#-span-id--anchor-9----span-replacing-an-existing-angularjs-directive)
+    + [<span id="anchor-10"></span>1. Define the React component](#-span-id--anchor-10----span-1-define-the-react-component)
+    + [<span id="anchor-11"></span>2. Define an Angular module for the React component](#-span-id--anchor-11----span-2-define-an-angular-module-for-the-react-component)
+    + [<span id="anchor-12"></span>3. Create the top level Angular app module](#-span-id--anchor-12----span-3-create-the-top-level-angular-app-module)
+    + [<span id="anchor-13"></span>4. Using the new component](#-span-id--anchor-13----span-4-using-the-new-component)
+  * [<span id="anchor-14"></span>Useful React component libraries](#-span-id--anchor-14----span-useful-react-component-libraries)
+    + [<span id="anchor-15"></span>React Bootstrap](#-span-id--anchor-15----span-react-bootstrap)
+  * [<span id="anchor-16"></span>React testing techniques](#-span-id--anchor-16----span-react-testing-techniques)
+    + [<span id="anchor-17"></span>Setting up Jest to test a React component](#-span-id--anchor-17----span-setting-up-jest-to-test-a-react-component)
+    + [<span id="anchor-18"></span>Useful web links](#-span-id--anchor-18----span-useful-web-links)
+
+
+
 <span id="anchor"></span>Migrating from AngularJS to React
 ==========================================================
 
