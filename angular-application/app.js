@@ -1,5 +1,6 @@
 import angular from 'angular'
 import bootstrap from 'angular-ui-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 require('./modules/site-config');
 require('./modules/home');

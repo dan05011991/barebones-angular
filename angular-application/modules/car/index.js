@@ -1,6 +1,8 @@
 import angular from 'angular'
 import angular_ui_router from 'angular-ui-router'
 import {initialiseAgGridWithAngular1, Grid} from 'ag-grid-community'
+import 'ag-grid-community/dist/styles/ag-grid.min.css'
+import 'ag-grid-community/dist/styles/ag-theme-alpine.css'
 
 initialiseAgGridWithAngular1(angular);
 
