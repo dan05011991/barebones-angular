@@ -30,7 +30,8 @@ This is an AngularJS application, demonstrating how React components can be inte
 
 -   It is beneficial to use an up to date technology stack. AngularJS is no longer being supported, or developed. It has been superceded by Angular 2+.
     React is currently the de-facto standard web UI framework. It has a lot of support and adoption, and is being actively maintained/developed.
--   React’s architecture is extremely structured. Based on components, it would create a very clean and maintainable Javascript codebase. We are also able to use state management frameworks e.g. Redux. This greatly improves the architecture, provides much better state management for the application, particularly between components. It also makes it easier to test the code.
+-   React’s architecture is extremely structured. Based on components, it would create a very clean and maintainable Javascript codebase. We are also able to use state management frameworks e.g. Redux. This greatly improves the architecture, provides much better state management for the application, particularly between components. It's also easier to test the code, because Redux uses pure Javascript functions to alter the state, with no side effects.
+-   Redux developer tools offer excellent debugging features. This includes the ability to easily track state changes, and even roll back the application state and step through individual actions. 
 -   Many developers are either learning to use React, or are already skilled. This means that there would be fewer problems in attracting and retaining developers in the team.
 -   New developers on the team would be able to understand the code more easily, and become productive sooner.
 -   Using React opens up possibilities of utilising more efficient development tools. E.g. headless Visual Studio debugging, and modern testing frameworks.
