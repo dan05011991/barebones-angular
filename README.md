@@ -155,111 +155,75 @@ First we need to create an equivalent React component for the Angular directive.
 
 Notice also how much cleaner the generated HTML (JSX) code is in the render() function, compared to the code in the Angular directive.
 
+```
 import React, { Component } from 'react';
 
 class MyList extends Component {
-
 constructor(props) {
-
  super(props);
-
  this.state = {
-
- products : \[
-
- { name: "Apples", category: "Fruit", price: 1.20, expiry: 10 },
-
- { name: "Bananas", category: "Fruit", price: 2.42, expiry: 7 },
-
- { name: "Pears", category: "Fruit", price: 2.02, expiry: 6 }
-
- \]
-
- };
-
+     products : [
+         { name: "Apples", category: "Fruit", price: 1.20, expiry: 10 },
+         { name: "Bananas", category: "Fruit", price: 2.42, expiry: 7 },
+         { name: "Pears", category: "Fruit", price: 2.02, expiry: 6 }
+     ]
+     };
  }
 
  render() {
-
- const productRows = this.state.products.map((product, index) =&gt;
-
- &lt;li key={index}&gt;{product.name}&lt;/li&gt;
-
+     const productRows = this.state.products.map((product, index) =&gt;
+     &lt;li key={index}&gt;{product.name}&lt;/li&gt;
  );
 
  return (
-
- &lt;div&gt;
-
- &lt;ul&gt;
-
- {productRows}
-
- &lt;/ul&gt;
-
- &lt;/div&gt;
-
+     &lt;div&gt;
+     &lt;ul&gt;
+     {productRows}
+     &lt;/ul&gt;
+     &lt;/div&gt;
  );
-
  }
-
 }
 
 export default MyList;
+```
 
 ### <span id="anchor-11"></span>2. Define an Angular module for the React component
 
 This React component can be defined as an AngularJS module by writing the following:
 
+```
 import { react2angular } from 'react2angular';
 
-angular
-
- .module('app.unorderedlist', \[\])
-
- .component('unorderedList', react2angular(require('./components/MyList').default, \[\]));
+angular.module('app.unorderedlist', []).component('unorderedList', react2angular(require('./components/MyList').default, []));
+```
 
 ### <span id="anchor-12"></span>3. Create the top level Angular app module
 
 The entry point for an angular application is the top level module. In creating this, we specify all the required dependent modules, including the one we just defined.
 
+```
 require('./modules/site-config');
-
 require('./modules/home');
-
 require('./modules/event');
-
 require('./modules/date');
-
 require('./modules/contact');
-
 require('./modules/comms');
-
 require('./modules/calendar');
-
 require('./modules/backend');
-
 require('./modules/app-config');
-
 require('./modules/spinner');
-
 require('./modules/unorderedlist');
 
-var app = angular.module('app', \[
-
+var app = angular.module('app', [
  'app.unorderedlist',
-
  'app.myspinner',
-
  'app.config',
-
  'app.comms',
-
  'app.car',
-
- ….
-
-\]);
+ ...
+]);
+```
 
 ### <span id="anchor-13"></span>4. Using the new component
 
@@ -267,11 +231,11 @@ The previously defined Angular module/React component can be used in the usual w
 
 Note: We removed the ‘ng-controller’ attribute from the &lt;div&gt; element:
 
+```
 &lt;div&gt;
-
- &lt;unordered-list list-source="products" list-property="price | currency" /&gt;
-
+&lt;unordered-list list-source="products" list-property="price | currency" /&gt;
 &lt;/div&gt;
+```
 
 <span id="anchor-14"></span>Useful React component libraries
 ------------------------------------------------------------
@@ -284,51 +248,40 @@ To test this we initially used Webpack, which is a popular module bundler for Ja
 
 To start with, we can import the required React-Bootstrap items into our React component:
 
+```
 import React, { Component } from 'react'
 import Spinner from 'react-bootstrap/Spinner';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.css';
+```
 
 We are now able to make use of Spinner and Button in our React component definition
 
+```
 class MySpinner extends Component {
 
  render() {
-
- return (
-
- &lt;div&gt;
-
- &lt;Button variant="primary" enabled="true"&gt;
-
- &lt;Spinner
-
- as="span"
-
- animation="border"
-
- size="sm"
-
- role="status"
-
- aria-hidden="true"
-
- /&gt;
-
- Loading...
-
- &lt;/Button&gt;
-
- &lt;/div&gt;
-
- );
-
- }
-
+     return (
+         &lt;div&gt;
+         &lt;Button variant="primary" enabled="true"&gt;
+         &lt;Spinner
+         as="span"
+         animation="border"
+         size="sm"
+         role="status"
+         aria-hidden="true"
+         /&gt;
+         Loading...
+         &lt;/Button&gt;
+         &lt;/div&gt;
+       );
+   }
 }
+```
 
 Webpack requires CSS loaders, which are specified in the webpack.config.js file:
 
+```
 *module: {
 loaders: \[
  {
@@ -337,9 +290,11 @@ loaders: \[
  }
  ...
 }*
+```
 
 This should be all we need to get the application working. But the following problem occurred at run time:
 
+```
 ERROR in ./~/css-loader/dist/cjs.js!./~/bootstrap/dist/css/bootstrap.css
 
 Module build failed: TypeError: Cannot read property 'split' of undefined
@@ -347,10 +302,13 @@ Module build failed: TypeError: Cannot read property 'split' of undefined
  at Object.loader (/home/andrew/angular/barebones-angular/node\_modules/css-loader/dist/index.js:84:33)
 
  @ ./~/bootstrap/dist/css/bootstrap.css 2:26-86
+ ```
 
 The only workaround for this problem was to include the CSS file using a conventional &lt;link&gt; element in the main application index.html
 
+```
 &lt;link rel="stylesheet" href="./node\_modules/bootstrap/dist/css/bootstrap.css"&gt;
+```
 
 <span id="anchor-16"></span>React testing techniques
 ----------------------------------------------------
@@ -376,75 +334,55 @@ However in the case of a hybrid AngularJS/React app, this command hasn’t been 
 
 First thing is to specifiy the command to start the tests. This is done by adding the following to package.json:
 
+```
 "scripts": {
-
  "start": "webpack-dev-server --content-base --inline --hot --port 1234",
-
  **"test": "jest"**
-
 },
+```
 
 There are a few dependencies required
 
+```
 "devDependencies": {
-
 "@babel/plugin-proposal-class-properties": "^7.8.3",
-
 "@babel/preset-env": "^7.9.5",
-
 "@babel/preset-react": "^7.9.4",
-
 "babel-core": "^6.22.1",
-
 "babel-jest": "^25.4.0",
-
 "babel-loader": "^6.2.10",
-
 "babel-preset-es2015": "^6.22.0",
-
 "babel-preset-react": "^6.22.0",
-
 "babel-preset-stage-0": "^6.22.0",
-
 "jest": "^25.4.0",
-
 "jest-transform-stub": "^2.0.0",
-
 "react-test-renderer": "^16.13.1",
-
 "webpack": "^1.14.0",
-
 "webpack-dev-server": "^1.16.2"
-
 },
+```
 
 And because React uses JSX syntax, this needs to be translated into conventional Javascript. There’s a plugin called Babel which does this
 
+```
 "jest": {
-
  "transform": {
-
  "^.+\\\\.js?$": "babel-jest"
-
  }
-
 }
+```
 
 There’s also a configuration file for babel, which is *.babelrc* in the top level directory of your application. Add the following to this file
 
+```
 {
-
- "presets": \[
-
+ "presets": [
  "@babel/preset-env",
-
  "@babel/preset-react"
-
- \],
-
+ ],
  "plugins": \["@babel/plugin-proposal-class-properties"\]
-
 }
+```
 
 ### <span id="anchor-18"></span>Useful web links
 
