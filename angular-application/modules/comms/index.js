@@ -1,3 +1,6 @@
+import angular from 'angular'
+import RestangularProvider from 'restangular'
+
 var commsModule = angular.module('app.comms', ['restangular', 'site.config'])
   .config(['RestangularProvider', 'siteConfig', function(RestangularProvider, siteConfig) {
 

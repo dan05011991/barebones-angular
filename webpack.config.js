@@ -14,7 +14,10 @@ module.exports = {
     rules: [
       {
         test: /\.js?$/,
-        exclude: /(node_modules)/,
+        exclude: [
+          "/(node_modules)/",
+          "/_test_/"
+        ],
         use: {
           loader: 'babel-loader'
         }

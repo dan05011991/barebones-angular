@@ -1,3 +1,6 @@
+import angular from 'angular'
+import bootstrap from 'angular-ui-bootstrap'
+
 require('./modules/site-config');
 require('./modules/home');
 require('./modules/event');
@@ -24,7 +27,5 @@ var app = angular.module('app', [
   'app.calendar',
   'app.event',
   'ui.bootstrap',
-  'updateMeta',
-  'site.config',
-  'angulartics', 'angulartics.google.analytics'
+  'site.config'
 ]);

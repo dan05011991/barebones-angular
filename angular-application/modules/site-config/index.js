@@ -1,4 +1,6 @@
-var siteConfig = angular.module('site.config', ['ezfb'])
+import angular from 'angular'
+
+var siteConfig = angular.module('site.config', [])
   .constant('siteConfig', {
     root: 'http://localhost',
     backendBase: 'http://localhost:8090/',
