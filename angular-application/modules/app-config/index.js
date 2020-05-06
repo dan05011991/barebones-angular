@@ -1,3 +1,4 @@
+import angular from 'angular'
 
 var appConfig = angular.module('app.config', [])
   .filter('capitalize', function() {

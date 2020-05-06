@@ -14,7 +14,10 @@ module.exports = {
     rules: [
       {
         test: /\.js?$/,
-        exclude: /(node_modules)/,
+        exclude: [
+          "/(node_modules)/",
+          "/_test_/"
+        ],
         use: {
           loader: 'babel-loader'
         }
@@ -28,8 +31,9 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader'
-      }
+        use: ['style-loader', 'css-loader']
+      },
+      { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' }
     ]
   },
   output: {
