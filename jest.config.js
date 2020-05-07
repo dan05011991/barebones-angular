@@ -34,7 +34,7 @@ module.exports = {
 
   reporters: [
     "default",
-    [ "jest-junit", { outputDirectory: "junit" } ]
+    [ "jest-junit", { outputDirectory: "tests/junit" } ]
 ]
 };
 

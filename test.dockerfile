@@ -4,4 +4,3 @@ COPY . /usr/webapp
 WORKDIR /usr/webapp
 
 RUN npm install
-RUN npm test
